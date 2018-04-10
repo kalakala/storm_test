@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) throws AlreadyAliveException, InvalidTopologyException, AuthorizationException {
         TopologyBuilder builder =new TopologyBuilder();
-        builder.setSpout("mySpout",new MySpout(),1);
+        builder.setSpout("mySpout",new MySpout(),2);
         builder.setBolt("myBolt",new MyBolt(),1).shuffleGrouping("mySpout");
 
         Config config=new Config();
